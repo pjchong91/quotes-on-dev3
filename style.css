@@ -684,7 +684,9 @@ body {
   font-size: 16px;
   color: #ffffff;
   background-color: #222222;
-  font-family: 'Exo'; }
+  font-family: 'Exo';
+  padding: 40px 20px 0px 20px;
+  font-weight: 300; }
   @media (min-width: 1080px) {
     body {
       width: 1080px;
@@ -692,6 +694,70 @@ body {
 
 .dashed-border {
   border: 1px dashed #ffffff; }
+
+button[type=button] {
+  color: #00cc00;
+  border: 2px solid #00cc00;
+  background: transparent;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  text-shadow: none;
+  padding: 15px 35px;
+  font-size: 1.0rem;
+  font-family: 'Exo';
+  font-weight: 500; }
+  button[type=button]:hover {
+    border: 2px solid #090;
+    color: #090; }
+
+a {
+  color: #00cc00;
+  text-decoration: none; }
+  a:visited {
+    color: #00cc00; }
+  a:hover {
+    color: #090; }
+
+.entry-content p {
+  font-size: 1.3rem;
+  font-weight: 300; }
+
+.entry-title {
+  font-size: 1.3rem;
+  font-weight: 300; }
+
+.logo {
+  height: 80px;
+  width: 275px; }
+  @media (min-width: 620px) and (max-width: 1079px) {
+    .logo {
+      height: 160px;
+      width: auto; } }
+
+.footer-navigation ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  white-space: nowrap; }
+
+.footer-navigation li {
+  display: inline-block; }
+  .footer-navigation li:last-child a {
+    border-right: none; }
+  .footer-navigation li:first-child a {
+    padding: 0px 20px 0px 0px; }
+
+.footer-navigation a {
+  border-right: 1px solid white;
+  padding: 0px 20px; }
+
+.site-footer {
+  margin: 100px 0px; }
+
+.source {
+  font-style: italic;
+  color: #090;
+  font-size: 1.3rem; }
 
 /*--------------------------------------------------------------
 # Media

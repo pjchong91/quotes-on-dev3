@@ -31,6 +31,10 @@
 	clear: both;
 	margin: 0 0 $base__space-unit;
 }
+//START OF OWN CSS
+
+$brand-green: #00cc00;
+$brand-dark-green: #090;
 
 body{
 	line-height: 1.5;
@@ -38,6 +42,8 @@ body{
 	color: #ffffff;
 	background-color: #222222;
 	font-family: 'Exo';
+	padding: 40px 20px 0px 20px;
+	font-weight: 300;
 	@include desktop{
 		width: 1080px;
 		background-color: #222222;
@@ -45,6 +51,87 @@ body{
 }
 
 .dashed-border{
-	border: 1px dashed #ffffff
+	border: 1px dashed #ffffff;
 }
 
+
+button[type=button]{
+	color: $brand-green;
+	border: 2px solid $brand-green;
+	background: transparent;
+	box-shadow: none;
+	text-shadow: none;
+	padding: 15px 35px;
+	font-size: 1.0rem;
+	font-family: 'Exo';
+	font-weight: 500;
+	&:hover{
+		border: 2px solid $brand-dark-green;
+		color: $brand-dark-green;
+	}
+}
+
+a{
+	color: $brand-green;
+	text-decoration: none;
+	&:visited{
+		color: $brand-green;
+	}
+	&:hover{
+		color: $brand-dark-green;
+	}
+}
+
+.entry-content{
+	p{
+		font-size: 1.3rem;
+		font-weight: 300;
+	}
+}
+
+.entry-title{
+	font-size: 1.3rem;
+	font-weight: 300;
+}
+
+.logo{
+	height: 80px;
+	width: 275px;
+	@include tablet{
+		height: 160px;
+		width: auto;
+	}
+}
+
+.footer-navigation{
+	ul{
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+		white-space: nowrap;
+	}
+	li{
+		display: inline-block;
+		
+		&:last-child a{
+			border-right: none;
+		}
+		&:first-child a{
+			padding: 0px 20px 0px 0px;
+		}
+	}
+	a{
+		border-right: 1px solid white;
+		padding: 0px 20px;	
+	}
+}
+
+.site-footer{
+	margin: 100px 0px;
+}
+
+.source{
+	font-style: italic;
+	color: $brand-dark-green;
+	font-size: 1.3rem;
+}
