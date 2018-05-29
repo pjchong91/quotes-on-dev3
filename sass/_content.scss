@@ -31,3 +31,20 @@
 	clear: both;
 	margin: 0 0 $base__space-unit;
 }
+
+body{
+	line-height: 1.5;
+	font-size: 16px;
+	color: #ffffff;
+	background-color: #222222;
+	font-family: 'Exo';
+	@include desktop{
+		width: 1080px;
+		background-color: #222222;
+	}
+}
+
+.dashed-border{
+	border: 1px dashed #ffffff
+}
+

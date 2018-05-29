@@ -4,3 +4,18 @@
 	margin-left: auto;
 	margin-right: auto;
 }
+
+$tablet-width: 620px;
+$desktop-width: 1080px;
+
+@mixin tablet {
+  @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$desktop-width}) {
+    @content;
+  }
+}
