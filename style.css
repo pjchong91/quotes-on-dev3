@@ -756,6 +756,7 @@ a {
     color: #090; }
 
 .entry-title {
+  display: inline;
   font-size: 1.3rem;
   font-weight: 300;
   margin: 0; }
@@ -875,19 +876,9 @@ a {
     padding: 0; } }
 
 .source {
-  display: inline-block;
+  display: inline;
   font-style: italic;
-  color: #090;
   font-size: 1.3rem; }
-
-.entry-meta {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row; }
 
 .page-template-default .entry-title {
   font-size: 2.0rem;

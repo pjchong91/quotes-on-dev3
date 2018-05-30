@@ -1,17 +1,21 @@
 (function($) {
   'use strict';
 
-  console.log('IM CONECTED')
-
   // remove this body append code, just for initial test
   $('body').append('js file is working');
 
   /**
    * Ajax-based random post fetching & History API
    */
+
+  var lastPage = '';
+
 $('#new-quote-button').on('click', function(event){
   event.preventDefault();
-  console.log('YOUCLICKEDMAAAAY');
+  
+
+  
+  
   //write ajax for get request
 
   $.ajax({
@@ -20,8 +24,37 @@ $('#new-quote-button').on('click', function(event){
     cache: false
   }).done(function(data){
     console.log(data);
-    //append the data to html, look at template-parts/content.php
+  
+    $('.entry-content').html(data[0].content.rendered);
+    if (data[0]._qod_quote_source !== "" && data[0]._qod_quote_source_url !== "" ){
+      $('.entry-title').html('&mdash;'+ data[0].title.rendered + ',  '); 
+      $('.source').html('<a href="'+ data[0]._qod_quote_source_url + '" alt="Quote Source">' + data[0]._qod_quote_source + '</a>');
+    console.log('I have a source and source has link');
+    }
 
+
+    else if (data[0]._qod_quote_source !== "" ){
+      $('.entry-title').html('&mdash;'+ data[0].title.rendered + ',  '); 
+      $('.source').html(data[0]._qod_quote_source);
+      console.log('source with no lnk');
+    }else {
+      console.log('I HAVE NO SOURCe AND I AM EmPTY');
+      $('.entry-title').html('&mdash;'+ data[0].title.rendered);
+      $('.source').empty();
+      console.log('itsjust me');
+    } 
+
+  
+
+    lastPage=document.URL;
+    console.log(lastPage);
+
+    history.pushState(null, null, data[0].slug);
+
+  //ajax get request, try looking for the wp slug
+    
+ 
+ 
   }).fail(function(){
     //some message saying there was an error - recommended append
   });
@@ -30,5 +63,16 @@ $('#new-quote-button').on('click', function(event){
   /**
    * Ajax-based front-end post submissions.  take a look at the javascript slides for post request - also look @ redpsrout
    */
+
+   
+  $(window).on("popstate", function(){
+    window.location.replace(lastPage);
+    console.log('im going back in tiem');
+  });
+
+ 
+
+   
+  
 
 })(jQuery);

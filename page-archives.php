@@ -38,10 +38,12 @@ get_header(); ?>
                <h2>Tags</h2>
                <?php wp_tag_cloud( array(
                   'smallest' => 1,
-                  'largest' => 1,
+                  'largest' => 1.5,
                   'unit' => 'rem',
                   'format' => 'list'
                ) ); ?>
+
+               <?php wp_list_tags('tags_li='); ?>
             </div>
          </section>
 
