@@ -715,7 +715,10 @@ button[type=button], input[type=submit] {
   margin: 20px 0px; }
   button[type=button]:hover, input[type=submit]:hover {
     border: 2px solid #090;
-    color: #090; }
+    color: #090;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+    text-shadow: none; }
   @media (min-width: 620px) {
     button[type=button], input[type=submit] {
       font-size: 1.2rem; } }
@@ -913,11 +916,17 @@ ul {
 input[type=text], input[type=url] {
   background-color: #222222;
   border: 2px solid #00cc00;
-  width: 60%; }
+  width: 60%;
+  color: #ffffff; }
+  input[type=text]:focus, input[type=url]:focus {
+    color: white; }
 
 textarea {
   background-color: #222222;
-  border: 2px solid #00cc00; }
+  border: 2px solid #00cc00;
+  color: #ffffff; }
+  textarea:focus {
+    color: #ffffff; }
 
 label {
   margin-bottom: 10px; }

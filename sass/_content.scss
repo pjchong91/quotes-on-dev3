@@ -77,6 +77,8 @@ button[type=button], input[type=submit]{
 	&:hover{
 		border: 2px solid $brand-dark-green;
 		color: $brand-dark-green;
+		box-shadow: none;
+		text-shadow: none;
 	}
 	@include tablet{
 		font-size: 1.2rem;
@@ -330,13 +332,21 @@ ul{
 input[type=text], input[type=url]{
 	background-color: #222222;
 	border: 2px solid $brand-green;
-	width: 60%
+	width: 60%;
+	color: #ffffff;
+	&:focus{
+		color: white;
+	}
 
 }
 
 textarea{
 	background-color: #222222;
 	border: 2px solid $brand-green;
+	color: #ffffff;
+	&:focus{
+		color: #ffffff;
+	}
 }
 
 label{

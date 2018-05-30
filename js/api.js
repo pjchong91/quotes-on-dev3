@@ -26,6 +26,7 @@ $('#new-quote-button').on('click', function(event){
     console.log(data);
   
     $('.entry-content').html(data[0].content.rendered);
+
     if (data[0]._qod_quote_source !== "" && data[0]._qod_quote_source_url !== "" ){
       $('.entry-title').html('&mdash;'+ data[0].title.rendered + ',  '); 
       $('.source').html('<a href="'+ data[0]._qod_quote_source_url + '" alt="Quote Source">' + data[0]._qod_quote_source + '</a>');
@@ -63,6 +64,34 @@ $('#new-quote-button').on('click', function(event){
   /**
    * Ajax-based front-end post submissions.  take a look at the javascript slides for post request - also look @ redpsrout
    */
+
+
+   $('#quote-submission-form').submit(function(event){
+    event.preventDefault();
+
+    $.ajax({
+      method: 'POST',
+      url: api_vars.root_url + 'wp/v2/posts/',
+      data: {
+        title: $('#quote-author').val(),
+        content: $('#quote-content').val(),
+        _qod_quote_source: $('#quote-source').val(),
+        _qod_quote_source_url: $('#quote-source-url').val(),
+        status: 'publish'
+      },
+      beforeSend: function(xhr) {
+        xhr.setRequestHeader( 'X-WP-Nonce', api_vars.nonce );
+     }
+    })
+    .done(function(){
+      console.log('great');
+      $('#quote-submission-form').slideUp('slow');
+      $('.quote-submission-wrapper').append('Thanks for your submission!');
+    })
+
+    //form should disappear after submission successful
+
+   });
 
    
   $(window).on("popstate", function(){
