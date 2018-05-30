@@ -72,6 +72,17 @@ function qod_scripts() {
 	/**
 	 * @TODO add localize script rest api JavaScript
 	 */
+	if (function_exists('rest_url')){
+		wp_enqueue_script('qod_api', get_template_directory_uri().'/build/js/api.min.js', array('jquery'), false, true);
+		//api_vars -- this is a global variable that is an object, converted from array
+		wp_localize_script('qod_api','api_vars', array(
+			'root_url' => esc_url_raw( rest_url() ),
+			'home_url' => esc_url_raw(home_url()),
+			'nonce' => wp_create_nonce('wp_rest'), //will later call api_vars.nonce
+			'success' => 'Thanks! Your quote submission was received.',
+			'failure' => 'Your submission could not be processed.'
+		));
+	}
 }
 add_action( 'wp_enqueue_scripts', 'qod_scripts' );
 
