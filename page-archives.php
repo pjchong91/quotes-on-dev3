@@ -43,7 +43,6 @@ get_header(); ?>
                   'format' => 'list'
                ) ); ?>
 
-               <?php wp_list_tags('tags_li='); ?>
             </div>
          </section>
 

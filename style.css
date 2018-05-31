@@ -728,6 +728,11 @@ button[type=button], input[type=submit] {
       margin: 0 auto;
       font-size: 1.4rem; } }
 
+button:hover {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  border-color: none; }
+
 .search-submit {
   border: none;
   color: #00cc00;
@@ -919,14 +924,16 @@ input[type=text], input[type=url] {
   width: 60%;
   color: #ffffff; }
   input[type=text]:focus, input[type=url]:focus {
-    color: white; }
+    color: white;
+    border: 2px solid white; }
 
 textarea {
   background-color: #222222;
   border: 2px solid #00cc00;
   color: #ffffff; }
   textarea:focus {
-    color: #ffffff; }
+    color: #ffffff;
+    border: 2px solid white; }
 
 label {
   margin-bottom: 10px; }
@@ -944,6 +951,14 @@ fieldset {
 
 .search .entry-summary {
   font-size: 1.0rem; }
+
+.archive .page-title {
+  border-bottom: 1px dotted #ffffff;
+  padding-bottom: 30px; }
+
+.archive article {
+  border-bottom: 1px dotted #ffffff;
+  padding-bottom: 50px; }
 
 /*--------------------------------------------------------------
 # Media

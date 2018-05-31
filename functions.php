@@ -80,7 +80,7 @@ function qod_scripts() {
 			'home_url' => esc_url_raw(home_url()),
 			'nonce' => wp_create_nonce('wp_rest'), //will later call api_vars.nonce
 			'success' => 'Thanks! Your quote submission was received.',
-			'failure' => 'Your submission could not be processed.'
+			'failure' => 'There appears to be an error in your submission.  Please try again.'
 		));
 	}
 }
