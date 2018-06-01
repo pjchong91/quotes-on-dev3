@@ -87,6 +87,42 @@ function qod_scripts() {
 add_action( 'wp_enqueue_scripts', 'qod_scripts' );
 
 /**
+ * Stretch goal: Create custom WP endpoint
+ * We will create a function 'qod_register_endpoints' that hooks onto 'rest_api_init'
+ * 'qod' is the namespace, '/rand' is the endpoint/route??
+ * The registered-rest-route is READABLE as per GET method - and to READ it we need to callback with 'get-random' function
+ * 
+ * Post meta-deta = related to custom fields
+ * as per: https://codex.wordpress.org/Custom_Fields
+ * Essentially, we will pull a post with get_post using parameters of orderby and post per page -->output is an array
+ * THEN, we will grab the meta data using get_post_meta for THAT id of post
+ * and then use array_push to push post meta to the post array
+ 
+ */
+
+
+add_action( 'rest_api_init', 'qod_register_endpoints' );
+
+function qod_register_endpoints() {
+    register_rest_route( 'qod', '/rand', array(
+        'methods'  => 'GET',
+    'callback' => 'get_random'
+    ) );
+}
+
+/**
+ * Get random posts
+ * @return array
+ */
+function get_random() {
+  $posts = get_posts( array( 'orderby' => 'rand', 'posts_per_page' => 1) );
+  $post_meta = get_post_meta( $posts[0]->ID );
+  array_push($posts, $post_meta);
+
+    return $posts;
+}
+
+/**
  * Custom functions that act independently of the theme templates.
  */
 require get_template_directory() . '/inc/extras.php';
