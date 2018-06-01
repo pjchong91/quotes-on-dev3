@@ -73,6 +73,10 @@ button[type=button], input[type=submit]{
 	font-family: 'Exo';
 	font-weight: 500;
 	margin: 20px 0px;
+	&:focus{
+		outline: 0;
+	}
+	
 
 	&:hover{
 		border: 2px solid $brand-dark-green;
@@ -225,6 +229,7 @@ a{
 .logo{
 	height: 80px;
 	width: 275px;
+	margin-bottom: 30px;
 	@include tablet{
 		height: 90px;
 		width: 500px;
@@ -232,6 +237,7 @@ a{
 	@include desktop{
 		width: 700px;
 		height: auto;
+		
 	}
 }
 
@@ -297,7 +303,7 @@ a{
 	.entry-title{
 		font-size: 2.0rem;
 		margin: 30px 0px;
-		font-weight: 600;
+		font-weight: 400;
 		
 	}
 	.entry-content{
@@ -365,6 +371,10 @@ fieldset{
 	
 }
 
+h1, h2{
+	font-weight: 400;
+}
+
 .search{
 	.page-title{
 		border-bottom: 1px dotted #FFFFFF;
@@ -383,12 +393,19 @@ fieldset{
 	.page-title{
 		border-bottom: 1px dotted #ffffff;
 		padding-bottom: 30px;
+		font-weight: 400;
 	
 	}
+
+
 
 	article{
 		border-bottom: 1px dotted #ffffff;
 		padding-bottom: 50px;
 	}
 	
+}
+
+.post-archives li{
+	line-height: 2.0;
 }

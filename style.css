@@ -713,6 +713,8 @@ button[type=button], input[type=submit] {
   font-family: 'Exo';
   font-weight: 500;
   margin: 20px 0px; }
+  button[type=button]:focus, input[type=submit]:focus {
+    outline: 0; }
   button[type=button]:hover, input[type=submit]:hover {
     border: 2px solid #090;
     color: #090;
@@ -838,7 +840,8 @@ a {
 
 .logo {
   height: 80px;
-  width: 275px; }
+  width: 275px;
+  margin-bottom: 30px; }
   @media (min-width: 620px) {
     .logo {
       height: 90px;
@@ -891,7 +894,7 @@ a {
 .page-template-default .entry-title {
   font-size: 2.0rem;
   margin: 30px 0px;
-  font-weight: 600; }
+  font-weight: 400; }
 
 .page-template-default .entry-content {
   font-size: 1.0rem; }
@@ -941,6 +944,9 @@ label {
 fieldset {
   border: none; }
 
+h1, h2 {
+  font-weight: 400; }
+
 .search .page-title {
   border-bottom: 1px dotted #FFFFFF;
   padding-bottom: 30px; }
@@ -954,11 +960,15 @@ fieldset {
 
 .archive .page-title {
   border-bottom: 1px dotted #ffffff;
-  padding-bottom: 30px; }
+  padding-bottom: 30px;
+  font-weight: 400; }
 
 .archive article {
   border-bottom: 1px dotted #ffffff;
   padding-bottom: 50px; }
+
+.post-archives li {
+  line-height: 2.0; }
 
 /*--------------------------------------------------------------
 # Media
