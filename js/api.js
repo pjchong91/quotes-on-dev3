@@ -13,7 +13,7 @@ $('#new-quote-button').on('click', function(event){
 
   $.ajax({
     method: 'GET',
-    url: api_vars.root_url + 'qod/rand',
+    url: api_vars.root_url + 'qod/rand/',
     cache: false
   }).done(function(data){
   console.log(data);
