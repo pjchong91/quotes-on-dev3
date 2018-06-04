@@ -16,7 +16,6 @@ $('#new-quote-button').on('click', function(event){
     url: api_vars.root_url + 'qod/rand/',
     cache: false
   }).done(function(data){
-  console.log(data);
     $('.entry-content').html(data[0].post_content);
 
     if (data[1]._qod_quote_source && data[1]._qod_quote_source_url ){
@@ -25,7 +24,7 @@ $('#new-quote-button').on('click', function(event){
     }
     else if (data[1]._qod_quote_source ){
       $('.entry-title').html('&mdash;'+ data[0].post_title + ',  '); 
-      $('.source').html(data[1]._qod_quote_source[0], 'should be source');
+      $('.source').html(data[1]._qod_quote_source[0]);
     }else {
       $('.entry-title').html('&mdash;'+ data[0].post_title);
       $('.source').empty();
