@@ -7,6 +7,9 @@
 ## Using:
 - Javascript(jQuery), Wordpress, and Gulp and SCSS as preprocessor.
 
+## To Use:
+- Run NPM Install after downloading the project
+
 ## Questions Encountered and Learning Acquired:
 * Q - How can we fetch new quotes without page refresh?
     - With javascript, we are calling the ajax method on button click.  After retrieving information from the WP-JSON file, we can use html() to change the html within a specified element without requiring the page to reload.  Additionally, we can push the current page's slug onto the document url and log the previous page url in a variable.  This allows the user to use the 'back' button to navigate to a previously loaded quote.
